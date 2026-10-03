@@ -2,6 +2,8 @@
 
 A standalone, browser-only portfolio demo built with React, TypeScript, and Vite. It uses synthetic orders to show limit order matching and parses its own FIX ExecutionReports. No exchange, broker, employer system, API, or live market feed is connected.
 
+**Live demo:** https://market-depth-fix-lab.netlify.app/
+
 ![Market Depth + FIX Lab in the Obsidiana theme](preview/desktop-obsidiana.png)
 
 ## Run locally
@@ -21,7 +23,9 @@ npm run build
 npm run preview
 ```
 
-On Windows with Microsoft Edge installed, `npm run test:browser` checks the rendered desktop and mobile flows against the running Vite server and writes screenshots to `preview/`.
+On Windows with Microsoft Edge installed, `npm run test:browser` checks the rendered desktop and mobile flows against the running Vite server and writes screenshots to `preview/`. To check the published site, set `MARKET_LAB_URL=https://market-depth-fix-lab.netlify.app/` before running the same command.
+
+Netlify reads `netlify.toml` (`npm run build`, publish `dist`). For a manual update, build and deploy `dist` to the project; for automatic updates, connect this GitHub repository as the site's build source in Netlify.
 
 ## Architecture
 

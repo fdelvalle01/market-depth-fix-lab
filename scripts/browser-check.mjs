@@ -6,11 +6,13 @@ const browser = await chromium.launch({
   executablePath: 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
   headless: true,
 });
+const targetUrl = process.env.MARKET_LAB_URL ?? 'http://127.0.0.1:5173/';
+const capture = !process.env.MARKET_LAB_URL;
 const output = resolve('preview');
-await mkdir(output, { recursive: true });
+if (capture) await mkdir(output, { recursive: true });
 try {
   const page = await browser.newPage({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 });
-  await page.goto('http://127.0.0.1:5173/', { waitUntil: 'networkidle' });
+  await page.goto(targetUrl, { waitUntil: 'networkidle' });
   await page.getByRole('button', { name: /submit buy order/i }).click();
   await page.getByText('3 TRADES').waitFor();
   await page.getByText('✓ VALID').waitFor();
@@ -20,7 +22,7 @@ try {
     scheme: getComputedStyle(document.documentElement).colorScheme,
   }));
   if (darkScroll.page === 'auto' || darkScroll.inspector === 'auto' || darkScroll.scheme !== 'dark') throw new Error('Obsidiana scrollbars are not themed.');
-  await page.screenshot({ path: resolve(output, 'desktop-obsidiana.png'), fullPage: true });
+  if (capture) await page.screenshot({ path: resolve(output, 'desktop-obsidiana.png'), fullPage: true });
   const desktopOverflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth);
   if (desktopOverflow) throw new Error('Desktop has horizontal overflow.');
   await page.getByRole('button', { name: 'Switch to light theme' }).click();
@@ -31,7 +33,7 @@ try {
   }));
   if (lightScroll.page === 'auto' || lightScroll.page === darkScroll.page || lightScroll.scheme !== 'light') throw new Error('Claro scrollbars did not update with theme.');
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.screenshot({ path: resolve(output, 'mobile-claro.png'), fullPage: true });
+  if (capture) await page.screenshot({ path: resolve(output, 'mobile-claro.png'), fullPage: true });
   const mobileOverflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth);
   if (mobileOverflow) throw new Error('Mobile has horizontal overflow.');
   console.log('Browser check passed: trade, FIX validation, themed scrollbars, desktop/mobile overflow.');
