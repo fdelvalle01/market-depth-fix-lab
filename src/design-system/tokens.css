@@ -1,0 +1,28 @@
+/* Portable subset of the personal Trading Workstation theme, Obsidiana / Claro. */
+.app-shell[data-theme='dark'],:root:not([data-theme='light']) {
+  --tws-surface-app:#0A0B0D;--tws-surface-workspace:#0A0B0D;--tws-surface-widget:#111316;--tws-surface-widget-header:#161A1E;--tws-surface-elevated:#1C2126;--tws-surface-table-header:#0D0F12;--tws-surface-input:#0D0F12;--tws-surface-hover:#232930;--tws-surface-selected:#112540;
+  --tws-border-subtle:#191D22;--tws-border-default:#242A31;--tws-border-strong:#39414B;--tws-border-focus:#2E86FF;
+  --tws-text-primary:#E8EAEF;--tws-text-secondary:#A7AEBC;--tws-text-muted:#787F8C;--tws-text-disabled:#565C68;--tws-text-on-brand:#0A0B0D;--tws-text-on-trading:#0A0B0D;
+  --tws-brand-primary:#2E86FF;--tws-brand-hover:#5AA0FF;--tws-brand-active:#1668E0;--tws-brand-subtle:rgba(46,134,255,.12);
+  --tws-trading-buy:#0ECB81;--tws-trading-buy-hover:#12E093;--tws-trading-buy-subtle:rgba(14,203,129,.14);--tws-trading-sell:#F6465D;--tws-trading-sell-hover:#FF5C71;--tws-trading-sell-subtle:rgba(246,70,93,.14);
+  --tws-status-success:#0ECB81;--tws-status-warning:#F0B90B;--tws-status-error:#F6465D;--tws-status-info:#2E86FF;--tws-status-success-subtle:rgba(14,203,129,.1);--tws-status-warning-subtle:rgba(240,185,11,.1);--tws-status-error-subtle:rgba(246,70,93,.1);--tws-status-info-subtle:rgba(46,134,255,.1);
+  --tws-interaction-focus-ring:rgba(46,134,255,.32);--tws-shadow-window:0 4px 14px rgba(0,0,0,.5);
+}
+.app-shell[data-theme='light'],:root[data-theme='light'] {
+  --tws-surface-app:#EDEFF2;--tws-surface-workspace:#F4F5F7;--tws-surface-widget:#FFFFFF;--tws-surface-widget-header:#F5F6F8;--tws-surface-elevated:#FFFFFF;--tws-surface-table-header:#F0F1F4;--tws-surface-input:#FFFFFF;--tws-surface-hover:#EBEDF0;--tws-surface-selected:#E4EDFB;
+  --tws-border-subtle:#E3E5E9;--tws-border-default:#CFD3DA;--tws-border-strong:#A3AAB4;--tws-border-focus:#1668E0;
+  --tws-text-primary:#14181D;--tws-text-secondary:#4A5461;--tws-text-muted:#6B7683;--tws-text-disabled:#9AA2AD;--tws-text-on-brand:#FFFFFF;--tws-text-on-trading:#FFFFFF;
+  --tws-brand-primary:#1668E0;--tws-brand-hover:#1046A8;--tws-brand-active:#0D3781;--tws-brand-subtle:rgba(22,104,224,.12);
+  --tws-trading-buy:#087F5B;--tws-trading-buy-hover:#066B4D;--tws-trading-buy-subtle:rgba(8,127,91,.14);--tws-trading-sell:#C92A45;--tws-trading-sell-hover:#AD1F39;--tws-trading-sell-subtle:rgba(201,42,69,.14);
+  --tws-status-success:#087F5B;--tws-status-warning:#A66300;--tws-status-error:#C92A45;--tws-status-info:#1F5FBF;--tws-status-success-subtle:rgba(8,127,91,.1);--tws-status-warning-subtle:rgba(166,99,0,.1);--tws-status-error-subtle:rgba(201,42,69,.1);--tws-status-info-subtle:rgba(31,95,191,.1);
+  --tws-interaction-focus-ring:rgba(22,104,224,.32);--tws-shadow-window:0 4px 14px rgba(0,0,0,.12);
+}
+.app-shell,:root {
+  --tws-font-ui:'IBM Plex Sans Variable','IBM Plex Sans',system-ui,sans-serif;
+  --tws-font-numeric:'IBM Plex Mono',monospace;
+  --tws-font-size-label-xs:10px;--tws-font-size-label-sm:11px;--tws-font-size-ui:12px;--tws-font-size-data-md:12.5px;--tws-font-size-data-lg:15px;--tws-font-size-title:15px;
+  --tws-radius-xs:2px;--tws-radius-sm:4px;--tws-radius-md:6px;
+  --tws-density-topbar:46px;--tws-density-widget-header:30px;--tws-density-input:32px;--tws-density-button:32px;--tws-density-table-row:26px;
+  --tws-motion-fast:120ms;--tws-motion-easing:cubic-bezier(.2,0,0,1);
+  --tws-interaction-disabled-opacity:.42;
+}
